@@ -16,26 +16,41 @@ else
 fi
 
 if [ $COMMD == "--init" ]; then
-  bash $REL"init.sh" $TITLE
+  bash $REL"initCJ.sh" $TITLE
 
 elif [ $COMMD == "--case" ]; then
   if [ -z "$3" ]; then
-    bash $REL"case.sh" $TITLE
+    bash $REL"caseCJ.sh" $TITLE
   else
-    bash $REL"case.sh" $TITLE $3
+    bash $REL"caseCJ.sh" $TITLE $3
   fi
 elif [ $COMMD == "--test" ]; then
   if [ -z "$3" ]; then
-    bash $REL"test.sh" $TITLE
+    bash $REL"testCJ.sh" $TITLE
   else
-    bash $REL"test.sh" $TITLE $3
+    bash $REL"testCJ.sh" $TITLE $3
   fi
-elif [ $COMMD == "--submitted" ]; then
+elif [ $COMMD == "--submit" ]; then
   if [ -z "$3" ]; then
-    bash $REL"submitted.sh" $TITLE
+    bash $REL"submit.sh" $TITLE
   else
-    bash $REL"submitted.sh" $TITLE $3
+    bash $REL"submit.sh" $TITLE $3
   fi
+elif [ $COMMD == "--finishComp" ]; then
+  if [ -z "$3" ]; then
+    bash $REL"finishComp.sh" $TITLE
+  else
+    bash $REL"finishComp.sh" $TITLE $3
+  fi
+elif [ $COMMD == "--finishCompetition" ]; then
+  if [ -z "$3" ]; then
+    bash $REL"finishComp.sh" $TITLE
+  else
+    bash $REL"finishComp.sh" $TITLE $3
+  fi
+
+elif [ $COMMD == "--submitted" ]; then
+  echo "The proper command is --submit or --finishCompetition"
 else
   echo "Invalid Command"
 fi

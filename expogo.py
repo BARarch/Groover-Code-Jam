@@ -5,7 +5,7 @@ def jumpStick(x, y):
     ## BFS with queue
     # Append right pop left
     from collections import deque
-    runUntil = 7
+    runUntil = 6
 
     def jumpLength(i):
         # Start i from 1
